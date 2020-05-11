@@ -81,17 +81,20 @@ namespace ItemStoreProject.Controllers
         }
 
         [HttpPost("login")]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> LoginAction(LoginViewModel model, [FromQuery] string returnUrl)
         {
             if (ModelState.IsValid)
             {
                 var getUserResult = await _userManager.FindByEmailAsync(model.Email);
-                var signInResult = await _signInManager.PasswordSignInAsync(getUserResult.UserName, model.Password, false, false);
+                await _signInManager.SignOutAsync();
+
+                var signInResult = await _signInManager.PasswordSignInAsync(getUserResult, model.Password, false, false);
                 if (signInResult.Succeeded)
                 {
                     if (string.IsNullOrWhiteSpace(returnUrl))
                     {
-                        return View("Index");
+                        return RedirectToAction("index", "home");
                     }
                     else
                     {
@@ -100,40 +103,45 @@ namespace ItemStoreProject.Controllers
                 }
                 else
                 {
+                    //return RedirectToAction("login", new { Email = model.Email });
                     return View("Login", new LoginViewModel()
                     {
                         Email = model.Email
                     });
                 }
+
             }
             else
             {
-                return View("Index", new HomeViewModel
-                {
-                    Title = "Invalid model",
-                    whatever = ModelState.Values
-                });
+                return RedirectToAction("index", "home", new { Title = "Invalid model", whatever = ModelState.Values });
+                //return View("Index", new HomeViewModel
+                //{
+                //    Title = "Invalid model",
+                //    whatever = ModelState.Values
+                //});
             }
         }
-
+        [HttpPost]
         public async Task<IActionResult> Logout()
         {
             try
             {
                 await _signInManager.SignOutAsync();
-                return View("Index", new HomeViewModel
-                {
-                    Title = "Successfully logged out!"
-                });
+                //return View("Index", new HomeViewModel
+                //{
+                //    Title = "Successfully logged out!"
+                //});
+                return RedirectToAction("index", "home", new { Title = "Succesfully logged out!" });
 
             }
             catch (Exception e)
             {
-                return View("Index", new HomeViewModel
-                {
-                    Title = "An unexpected error occured while trying to logout!",
-                    whatever = e
-                });
+                return RedirectToAction("index", "home", new { Title = "An unexpected error occired while trying to logut!", whatever = e });
+                //return View("Index", new HomeViewModel
+                //{
+                //    Title = "An unexpected error occured while trying to logout!",
+                //    whatever = e
+                //});
             }
 
         }

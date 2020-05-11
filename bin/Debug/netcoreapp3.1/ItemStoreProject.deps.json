@@ -29,6 +29,7 @@
           "Microsoft.EntityFrameworkCore": "5.0.0-preview.3.20181.2",
           "Microsoft.EntityFrameworkCore.Design": "5.0.0-preview.3.20181.2",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.0-preview.3.20181.2",
+          "Microsoft.SqlServer.SqlManagementObjects": "160.2004021.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.1.2",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
@@ -1056,6 +1057,153 @@
       },
       "Microsoft.NETCore.Platforms/2.1.2": {},
       "Microsoft.NETCore.Targets/1.1.0": {},
+      "Microsoft.SqlServer.Management.SqlParser/150.37051.0": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.SqlServer.Management.SqlParser.dll": {
+            "assemblyVersion": "15.100.0.0",
+            "fileVersion": "15.100.37051.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.SqlServer.Management.SqlParser.dll": {}
+        }
+      },
+      "Microsoft.SqlServer.SqlManagementObjects/160.2004021.0": {
+        "dependencies": {
+          "Microsoft.Data.SqlClient": "2.0.0-preview1.20021.1",
+          "Microsoft.SqlServer.Management.SqlParser": "150.37051.0",
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Data.Tools.Sql.BatchParser.dll": {
+            "assemblyVersion": "16.100.0.0",
+            "fileVersion": "16.100.37971.0"
+          },
+          "lib/netstandard2.0/Microsoft.SqlServer.Assessment.Types.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          },
+          "lib/netstandard2.0/Microsoft.SqlServer.Assessment.dll": {
+            "assemblyVersion": "1.100.0.0",
+            "fileVersion": "1.0.15.0"
+          },
+          "lib/netstandard2.0/Microsoft.SqlServer.ConnectionInfo.dll": {
+            "assemblyVersion": "16.100.0.0",
+            "fileVersion": "16.100.37971.0"
+          },
+          "lib/netstandard2.0/Microsoft.SqlServer.Dmf.Common.dll": {
+            "assemblyVersion": "16.100.0.0",
+            "fileVersion": "16.100.37971.0"
+          },
+          "lib/netstandard2.0/Microsoft.SqlServer.Dmf.dll": {
+            "assemblyVersion": "16.100.0.0",
+            "fileVersion": "16.100.37971.0"
+          },
+          "lib/netstandard2.0/Microsoft.SqlServer.Management.Assessment.dll": {
+            "assemblyVersion": "16.100.0.0",
+            "fileVersion": "16.100.37971.0"
+          },
+          "lib/netstandard2.0/Microsoft.SqlServer.Management.Collector.dll": {
+            "assemblyVersion": "16.100.0.0",
+            "fileVersion": "16.100.37971.0"
+          },
+          "lib/netstandard2.0/Microsoft.SqlServer.Management.CollectorEnum.dll": {
+            "assemblyVersion": "16.100.0.0",
+            "fileVersion": "16.100.37971.0"
+          },
+          "lib/netstandard2.0/Microsoft.SqlServer.Management.HadrData.dll": {
+            "assemblyVersion": "16.100.0.0",
+            "fileVersion": "16.100.37971.0"
+          },
+          "lib/netstandard2.0/Microsoft.SqlServer.Management.HadrModel.dll": {
+            "assemblyVersion": "16.100.0.0",
+            "fileVersion": "16.100.37971.0"
+          },
+          "lib/netstandard2.0/Microsoft.SqlServer.Management.RegisteredServers.dll": {
+            "assemblyVersion": "16.100.0.0",
+            "fileVersion": "16.100.37971.0"
+          },
+          "lib/netstandard2.0/Microsoft.SqlServer.Management.Sdk.Sfc.dll": {
+            "assemblyVersion": "16.100.0.0",
+            "fileVersion": "16.100.37971.0"
+          },
+          "lib/netstandard2.0/Microsoft.SqlServer.Management.SmoMetadataProvider.dll": {
+            "assemblyVersion": "16.100.0.0",
+            "fileVersion": "16.100.37971.0"
+          },
+          "lib/netstandard2.0/Microsoft.SqlServer.Management.SqlScriptPublish.dll": {
+            "assemblyVersion": "16.100.0.0",
+            "fileVersion": "16.100.37971.0"
+          },
+          "lib/netstandard2.0/Microsoft.SqlServer.Management.XEvent.dll": {
+            "assemblyVersion": "16.100.0.0",
+            "fileVersion": "16.100.37971.0"
+          },
+          "lib/netstandard2.0/Microsoft.SqlServer.Management.XEventDbScoped.dll": {
+            "assemblyVersion": "16.100.0.0",
+            "fileVersion": "16.100.37971.0"
+          },
+          "lib/netstandard2.0/Microsoft.SqlServer.Management.XEventDbScopedEnum.dll": {
+            "assemblyVersion": "16.100.0.0",
+            "fileVersion": "16.100.37971.0"
+          },
+          "lib/netstandard2.0/Microsoft.SqlServer.Management.XEventEnum.dll": {
+            "assemblyVersion": "16.100.0.0",
+            "fileVersion": "16.100.37971.0"
+          },
+          "lib/netstandard2.0/Microsoft.SqlServer.PolicyEnum.dll": {
+            "assemblyVersion": "16.100.0.0",
+            "fileVersion": "16.100.37971.0"
+          },
+          "lib/netstandard2.0/Microsoft.SqlServer.ServiceBrokerEnum.dll": {
+            "assemblyVersion": "16.100.0.0",
+            "fileVersion": "16.100.37971.0"
+          },
+          "lib/netstandard2.0/Microsoft.SqlServer.Smo.Notebook.dll": {
+            "assemblyVersion": "16.100.0.0",
+            "fileVersion": "16.100.37971.0"
+          },
+          "lib/netstandard2.0/Microsoft.SqlServer.Smo.dll": {
+            "assemblyVersion": "16.100.0.0",
+            "fileVersion": "16.100.37971.0"
+          },
+          "lib/netstandard2.0/Microsoft.SqlServer.SmoExtended.dll": {
+            "assemblyVersion": "16.100.0.0",
+            "fileVersion": "16.100.37971.0"
+          },
+          "lib/netstandard2.0/Microsoft.SqlServer.SqlEnum.dll": {
+            "assemblyVersion": "16.100.0.0",
+            "fileVersion": "16.100.37971.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Data.Tools.Sql.BatchParser.dll": {},
+          "lib/netstandard2.0/Microsoft.SqlServer.Assessment.Types.dll": {},
+          "lib/netstandard2.0/Microsoft.SqlServer.Assessment.dll": {},
+          "lib/netstandard2.0/Microsoft.SqlServer.ConnectionInfo.dll": {},
+          "lib/netstandard2.0/Microsoft.SqlServer.Dmf.Common.dll": {},
+          "lib/netstandard2.0/Microsoft.SqlServer.Dmf.dll": {},
+          "lib/netstandard2.0/Microsoft.SqlServer.Management.Assessment.dll": {},
+          "lib/netstandard2.0/Microsoft.SqlServer.Management.Collector.dll": {},
+          "lib/netstandard2.0/Microsoft.SqlServer.Management.CollectorEnum.dll": {},
+          "lib/netstandard2.0/Microsoft.SqlServer.Management.HadrData.dll": {},
+          "lib/netstandard2.0/Microsoft.SqlServer.Management.HadrModel.dll": {},
+          "lib/netstandard2.0/Microsoft.SqlServer.Management.RegisteredServers.dll": {},
+          "lib/netstandard2.0/Microsoft.SqlServer.Management.Sdk.Sfc.dll": {},
+          "lib/netstandard2.0/Microsoft.SqlServer.Management.SmoMetadataProvider.dll": {},
+          "lib/netstandard2.0/Microsoft.SqlServer.Management.SqlScriptPublish.dll": {},
+          "lib/netstandard2.0/Microsoft.SqlServer.Management.XEvent.dll": {},
+          "lib/netstandard2.0/Microsoft.SqlServer.Management.XEventDbScoped.dll": {},
+          "lib/netstandard2.0/Microsoft.SqlServer.Management.XEventDbScopedEnum.dll": {},
+          "lib/netstandard2.0/Microsoft.SqlServer.Management.XEventEnum.dll": {},
+          "lib/netstandard2.0/Microsoft.SqlServer.PolicyEnum.dll": {},
+          "lib/netstandard2.0/Microsoft.SqlServer.ServiceBrokerEnum.dll": {},
+          "lib/netstandard2.0/Microsoft.SqlServer.Smo.Notebook.dll": {},
+          "lib/netstandard2.0/Microsoft.SqlServer.Smo.dll": {},
+          "lib/netstandard2.0/Microsoft.SqlServer.SmoExtended.dll": {},
+          "lib/netstandard2.0/Microsoft.SqlServer.SqlEnum.dll": {}
+        }
+      },
       "Microsoft.VisualStudio.Web.CodeGeneration/3.1.2": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "5.0.0-preview.3.20215.2",
@@ -4213,6 +4361,20 @@
       "sha512": "sha512-aOZA3BWfz9RXjpzt0sRJJMjAscAUm3Hoa4UWAfceV9UTYxgwZ1lZt5nO2myFf+/jetYQo4uTP7zS8sJY67BBxg==",
       "path": "microsoft.netcore.targets/1.1.0",
       "hashPath": "microsoft.netcore.targets.1.1.0.nupkg.sha512"
+    },
+    "Microsoft.SqlServer.Management.SqlParser/150.37051.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9XC9zFoQ67mZ+8DAdXnxxJUX2q5MW299zwdu3b5A6VrerD5grfj2gmaZpO3S/ox9PV6gqWDtip3z3+tmRipopA==",
+      "path": "microsoft.sqlserver.management.sqlparser/150.37051.0",
+      "hashPath": "microsoft.sqlserver.management.sqlparser.150.37051.0.nupkg.sha512"
+    },
+    "Microsoft.SqlServer.SqlManagementObjects/160.2004021.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fV2X1q0dI2KBe5Qbay+IDO/DEa6aBIaysKnkDUtn4Kqk3r2ZfK5dwVOh7ScfiUsDnljjfwO6KYD2BbpYTZERGQ==",
+      "path": "microsoft.sqlserver.sqlmanagementobjects/160.2004021.0",
+      "hashPath": "microsoft.sqlserver.sqlmanagementobjects.160.2004021.0.nupkg.sha512"
     },
     "Microsoft.VisualStudio.Web.CodeGeneration/3.1.2": {
       "type": "package",

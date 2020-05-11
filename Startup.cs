@@ -31,6 +31,7 @@ namespace ItemStoreProject
         {
             var config = Configuration.Get<AppSettings>();
 
+
             // Configure database
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(config.ConnectionStrings.Database));
@@ -65,14 +66,14 @@ namespace ItemStoreProject
                 
             }).AddEntityFrameworkStores<AppDbContext>();
 
-            services.AddControllersWithViews();
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
             services.ConfigureApplicationCookie(options =>
             {
                 // Cookie settings
                 options.Cookie.HttpOnly = true;
                 options.ExpireTimeSpan = TimeSpan.FromMinutes(5);
-                options.LoginPath = "/account/login";
+                options.LoginPath = "/Account/Login";
                 options.AccessDeniedPath = "/account/accessDenied";
                 options.SlidingExpiration = true;
             });

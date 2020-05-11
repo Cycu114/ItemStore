@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "EB7VqR122Vy8+pU8e1pAWrdoB/3HZV1/2I4P4oEtD7EKCpjQNtik6F9RNifs14wJq0cFbPk3IeVwLlHH1Zft5A==",
+  "dgSpecHash": "2timeCYh5T8T/VcFaqL1E9z5/aN7qaWUEi5MFC8jrztvN4XTMvPvZ9wcK+J4sNgw9wcCkAmEKVrmA8f97fTVjA==",
   "success": true,
   "projectFilePath": "C:\\Users\\ASUS\\Desktop\\ItemStoreProject\\ItemStoreProject\\ItemStoreProject.csproj",
   "expectedPackageFiles": [
@@ -49,6 +49,8 @@
     "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.identitymodel.tokens\\5.5.0\\microsoft.identitymodel.tokens.5.5.0.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.netcore.platforms\\2.1.2\\microsoft.netcore.platforms.2.1.2.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.sqlserver.management.sqlparser\\150.37051.0\\microsoft.sqlserver.management.sqlparser.150.37051.0.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.sqlserver.sqlmanagementobjects\\160.2004021.0\\microsoft.sqlserver.sqlmanagementobjects.160.2004021.0.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration\\3.1.2\\microsoft.visualstudio.web.codegeneration.3.1.2.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.contracts\\3.1.2\\microsoft.visualstudio.web.codegeneration.contracts.3.1.2.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.core\\3.1.2\\microsoft.visualstudio.web.codegeneration.core.3.1.2.nupkg.sha512",

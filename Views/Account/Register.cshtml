@@ -1,0 +1,23 @@
+﻿@{
+    // ReSharper disable MustUseReturnValue
+    ViewData["Title"] = "Register Page";
+}
+@* @model object *@
+@* @{ *@
+@*     ViewBag.Title = "title"; *@
+@*     Layout = "_Layout"; *@
+@* } *@
+
+<h2>Register page</h2>
+
+@model RegisterViewModel
+
+<form method="post" asp-controller="Home" asp-action="RegisterAction">
+    <input type="text" asp-for="Email" value="" />
+    <br />
+    <input type="text" asp-for="UserName" value="" />
+    <br />
+    <input type="text" asp-for="Password" value="" />
+    <br />
+    <button type="submit">Register</button>
+</form>

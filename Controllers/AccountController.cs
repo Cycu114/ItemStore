@@ -1,10 +1,13 @@
 ﻿using ItemStoreProject.Models;
 using ItemStoreProject.Persistence;
 using ItemStoreProject.Persistence.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace ItemStoreProject.Controllers
@@ -26,6 +29,46 @@ namespace ItemStoreProject.Controllers
             _logger = logger;
         }
 
+        [Authorize(Roles = "Admin")]
+        [HttpGet("category")]
+        public IActionResult Category()
+        {
+            List<Category> Items = new List<Category>();
+            Items = _dbContext.Categories.OrderBy(o => o.Name).ToList();
+            var model = new CategoryViewModel();
+            model.Categories = Items;
+            return View(model);
+        }
+
+        [Authorize(Roles = "Admin")]
+        [HttpPost("updateCategoryName")]
+        public async Task<IActionResult> updateCategoryName(Category model)
+        {
+            model.Name = model.Name.Trim();
+            _dbContext.Categories.Update(model);
+            _dbContext.SaveChanges();
+            return Redirect("/account/category");
+        }
+
+        [Authorize(Roles = "Admin")]
+        [HttpPost("addCategoryName")]
+        public async Task<IActionResult> addCategoryName(Category model)
+        {
+            _dbContext.Categories.Add(model);
+            _dbContext.SaveChanges();
+            return Redirect("/account/category");
+        }
+
+        [Authorize(Roles = "Admin")]
+        [HttpPost("removeCategoryName")]
+        public async Task<IActionResult> removeCategoryName(Category model)
+        {
+            _dbContext.Categories.Remove(model);
+            _dbContext.SaveChanges();
+            return Redirect("/account/category");
+
+        }
+
         [HttpGet("register")]
         public IActionResult Register()
         {
@@ -44,7 +87,7 @@ namespace ItemStoreProject.Controllers
                 };
 
                 var result = await _userManager.CreateAsync(user, model.Password);
-
+                await _userManager.AddToRoleAsync(user, "RegisteredUser");
                 var getResult = await _userManager.FindByNameAsync(model.UserName);
 
                 if (result.Succeeded)

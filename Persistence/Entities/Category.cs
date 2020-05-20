@@ -1,18 +1,19 @@
-﻿using System.ComponentModel;
+﻿using Microsoft.SqlServer.Management.Assessment.Configuration;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace ItemStoreProject.Persistence.Entities
 {
-    public class Product
+    public class Category
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public string Id { get; set; }
-        [ForeignKey("Category")] public string CategoryId { get; set; }
+        [Required]
         public string Name { get; set; }
-        public string ImgUrl { get; set; }
-
-        public Category Category { get; set; }
     }
 }

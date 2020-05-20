@@ -10,6 +10,7 @@ using ItemStoreProject.Persistence;
 using ItemStoreProject.Persistence.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authorization;
+using System.Reflection;
 
 namespace ItemStoreProject.Controllers
 {
@@ -18,15 +19,18 @@ namespace ItemStoreProject.Controllers
     {
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
         private readonly AppDbContext _dbContext;
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(UserManager<User> userManager, SignInManager<User> signInManager, AppDbContext dbContext, ILogger<HomeController> logger)
+        public HomeController(UserManager<User> userManager, SignInManager<User> signInManager, AppDbContext dbContext, ILogger<HomeController> logger, 
+            RoleManager<IdentityRole> roleManager)
         {
             this._userManager = userManager;
             this._signInManager = signInManager;
             _dbContext = dbContext;
             _logger = logger;
+            _roleManager = roleManager;
         }
 
         [HttpGet]
@@ -69,7 +73,6 @@ namespace ItemStoreProject.Controllers
             var entity = new Product
             {
                 Name = "Dezodorant",
-                Category = "Myju myju",
                 ImgUrl = "https://penis.com"
             };
 
@@ -80,11 +83,27 @@ namespace ItemStoreProject.Controllers
             return Json(result.Entity);
         }
 
-        [Authorize]
+        [Authorize(Roles = "RegisteredUser,Admin")]
         [HttpGet("secret")]
         public IActionResult Secret()
         {
+            //var result = await _roleManager.CreateAsync(new IdentityRole("AnonymousUser"));
             return View();
         }
+
+        //[Authorize]
+        //[HttpGet("addAdminToRole")]
+        //public async Task<IActionResult> addAdminToRole()
+        //{
+        //    var user = await _userManager.FindByEmailAsync("admin@gmail.com");
+            
+        //    var result = await _userManager.AddToRoleAsync(user, "Admin");
+        //    if(result.Succeeded)
+        //    return RedirectToAction("Index","Home", new { Title = "Success" });
+        //    else
+        //    {
+        //        return RedirectToAction("Index", "Home", new { Title = "Failed" });
+        //    }
+        //}
     }
 }

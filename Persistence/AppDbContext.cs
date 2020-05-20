@@ -9,6 +9,7 @@ namespace ItemStoreProject.Persistence
         public DbSet<Offer> Offers { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<User> AspNetUsers { get; set; }
+        public DbSet<Category> Categories { get; set; }
 
         public AppDbContext() : base()
         {

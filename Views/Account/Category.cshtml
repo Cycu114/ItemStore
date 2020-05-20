@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewData["Title"] = "Edit Categories";
+    var index = 0;
+}
+@model CategoryViewModel
+
+<h1>Category</h1>
+<hr />
+
+<table cellspacing="10">
+    <tr>
+        <th>
+            Number
+        </th>
+        <th>
+            Category Name
+        </th>
+    </tr>
+    
+    @foreach (var Categories in Model.Categories)
+    {
+        <tr>
+            <form method="POST" action="/account/updateCategoryName">
+                <td> <input type="hidden" name="Id" value="@Categories.Id" /> @{ index++;} @index </td>
+                <td> <input type="text" name="Name" value="@Categories.Name" /> </td>
+                <td> <input type="submit" name="submit" value="Edit" /> </td>
+            </form>
+            <form method="POST" action="/account/removeCategoryName">
+                <td>
+                    <input type="hidden" name="Id" value="@Categories.Id" />
+                    <input type="submit" name="submit" value="Delete" />
+                </td>
+            </form>
+        </tr>
+    }
+
+    <tr>
+        <form method="POST" action="/account/addCategoryName">
+            <td> Add new category name:  </td>
+            <td> <input type="text" name="Name" placeholder="Category Name" /> </td>
+            <td> <input type="submit" name="submit" value="Add" /> </td>
+        </form>
+    </tr>
+</table>

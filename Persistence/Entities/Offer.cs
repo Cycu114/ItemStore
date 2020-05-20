@@ -20,7 +20,7 @@ namespace ItemStoreProject.Persistence.Entities
         public string Quality { get; set; }
         public decimal Price { get; set; }
 
-
+        //VALIDTATION
         public Product Product { get; set; }
         public User Owner { get; set; }
     }

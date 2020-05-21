@@ -21,14 +21,14 @@
     @foreach (var Categories in Model.Categories)
     {
         <tr>
-            <form method="POST" action="/account/updateCategoryName">
-                <td> <input type="hidden" name="id" value="@Categories.id" /> @{ index++;} @index </td>
-                <td> <input type="text" name="name" value="@Categories.name" /> </td>
+            <form method="POST" action="/items/updateCategoryName">
+                <td> <input type="hidden" name="Id" value="@Categories.Id" /> @{ index++;} @index </td>
+                <td> <input type="text" name="Name" value="@Categories.Name" /> </td>
                 <td> <input type="submit" name="submit" value="Edit" /> </td>
             </form>
-            <form method="POST" action="/account/removeCategoryName">
+            <form method="POST" action="/items/removeCategoryName">
                 <td>
-                    <input type="hidden" name="id" value="@Categories.id" />
+                    <input type="hidden" name="Id" value="@Categories.Id" />
                     <input type="submit" name="submit" value="Delete" />
                 </td>
             </form>
@@ -36,7 +36,7 @@
     }
 
     <tr>
-        <form method="POST" action="/account/addCategoryName">
+        <form method="POST" action="/items/addCategoryName">
             <td> Add new category name:  </td>
             <td> <input type="text" name="name" placeholder="Category Name" /> </td>
             <td> <input type="submit" name="submit" value="Add" /> </td>

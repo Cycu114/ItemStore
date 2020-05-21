@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
-namespace ItemStoreProject.wwwroot.Validation
+namespace ItemStoreProject.Validation
 {
     public class QualityAttribute : ValidationAttribute
     {
@@ -18,5 +19,4 @@ namespace ItemStoreProject.wwwroot.Validation
             return ValidationResult.Success;
         }
     }
-}
 }

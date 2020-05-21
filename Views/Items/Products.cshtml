@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewData["Title"] = "Add Item Type";
+}
+@model ProductViewModel
+@Html.ValidationSummary()
+@if (Model.errorMessage != null)
+{
+    <b> @Model.errorMessage </b>
+}
+@{
+    var index = 1;
+}
+<h1>Item Types</h1>
+<hr />
+<form method="POST" action="/items/AddProduct">
+    <table cellspacing="10">
+        <tr>
+            <th>
+                Item ID
+            </th>
+            <th>
+                Item Category
+            </th>
+            <th>
+                Item Type Name
+            </th>
+            <th>
+                Item Image Link
+            </th>
+        </tr>
+
+        @foreach (var ItemType in Model.Products)
+        {
+            <tr>
+                <td> @index </td>
+                <td>
+                    @{
+                        var CategoryName = "None";
+                        foreach (var CategoryFind in Model.Categories)
+                        {
+                            if (CategoryFind.Id == ItemType.Id) CategoryName = CategoryFind.Name;
+                        }
+                    }
+                    @CategoryName
+                </td>
+
+                <td> @ItemType.Name  </td>
+                <td> @ItemType.ImgUrl  </td>
+            </tr>
+            index++;
+
+        }
+        <tr>
+
+            <td> Add new ItemType:  </td>
+            <td>
+                <label for="Category" style="margin:10px">Choose a category:</label>
+                <select name="CategoryId" id="Category">
+                    @foreach (var Category in Model.Categories)
+                    {
+                        <option value="@Category.Id">@Category.Name</option>
+                    }
+                </select>
+            </td>
+            <td> <input type="text" name="Name" placeholder="ItemType Name" /> </td>
+            <td> <input type="text" name="ImgUrl" placeholder="Image Link" /> </td>
+
+            <td> <input type="submit" name="submit" value="Add" /> </td>
+        </tr>
+    </table>
+</form>

@@ -31,6 +31,7 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.0-preview.3.20181.2",
           "Microsoft.SqlServer.SqlManagementObjects": "160.2004021.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.1.3",
+          "elmah": "1.2.2",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "3.1.0.0",
@@ -301,6 +302,22 @@
         },
         "compile": {
           "ItemStoreProject.dll": {}
+        }
+      },
+      "elmah/1.2.2": {
+        "dependencies": {
+          "elmah.corelibrary": "1.2.2"
+        }
+      },
+      "elmah.corelibrary/1.2.2": {
+        "runtime": {
+          "lib/Elmah.dll": {
+            "assemblyVersion": "1.2.14706.0",
+            "fileVersion": "1.2.14706.955"
+          }
+        },
+        "compile": {
+          "lib/Elmah.dll": {}
         }
       },
       "Microsoft.AspNetCore.Cryptography.Internal/5.0.0-preview.3.20215.14": {
@@ -4046,6 +4063,20 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "elmah/1.2.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-UGnc/NHz0SHNc5eWaW+NynuYWFn+KM2NEoBJbavDt6s8pSBZQgDkKaaqvEV43TiF5GB1uDVjXLx1yjdfP78UPQ==",
+      "path": "elmah/1.2.2",
+      "hashPath": "elmah.1.2.2.nupkg.sha512"
+    },
+    "elmah.corelibrary/1.2.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OEx4ds9r2bw2/45VZwfw11lLv4y+mC2FUZxp7LsjmauFxj92K1kx8hafSBvls+V9s0WH0wv84B1LfWN/EaGfkg==",
+      "path": "elmah.corelibrary/1.2.2",
+      "hashPath": "elmah.corelibrary.1.2.2.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Cryptography.Internal/5.0.0-preview.3.20215.14": {
       "type": "package",

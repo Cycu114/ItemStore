@@ -5,6 +5,11 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <Content Include="Validation\QualityAttribute.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="elmah" Version="1.2.2" />
       <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.0-preview.3.20215.14" />
       <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.3" />
       <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.0-preview.3.20181.2" />

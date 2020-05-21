@@ -12,8 +12,8 @@ namespace ItemStoreProject.Persistence.Entities
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public string id { get; set; }
+        public string Id { get; set; }
         [Required]
-        public string name { get; set; }
+        public string Name { get; set; }
     }
 }

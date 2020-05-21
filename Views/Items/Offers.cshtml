@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewData["Title"] = "Add item for sale";
+}
+@model OfferViewModel
+@Html.ValidationSummary()
+@if (Model.errorMessage != null)
+{
+    <b> @Model.errorMessage </b>
+}
+<h1>Offers:</h1>
+<hr />
+<form method="POST" action="/items/addItemOffers">
+    <input type="hidden" asp-for="OwnerId" value="@Model.OwnerId" />
+    <table cellspacing="10">
+        <tr>
+            <th>
+                Product
+            </th>
+            <th>
+                Quantity
+            </th>
+            <th>
+                Quality
+            </th>
+            <th>
+                Price
+            </th>
+        </tr>
+
+        @foreach (var ItemOffer in Model.Offers)
+        {
+            <tr>
+                <td>
+                    @{
+                        var ItemTypeName = "None";
+                        foreach (var ItemFindName in Model.Products)
+                        {
+                            if (ItemFindName.Id == ItemOffer.ProductId) ItemTypeName = ItemFindName.Name;
+                        }
+                    }
+                    @ItemTypeName
+                </td>
+                <td> @ItemOffer.Quantity  </td>
+                <td> @ItemOffer.Quality  </td>
+                <td> @ItemOffer.Price  </td>
+            </tr>
+        }
+
+        <tr>
+
+            <td>
+
+                <label for="ItemType">Choose a Item Type:</label>
+                <select name="ProductId" id="ItemType">
+                    @foreach (var ItemType in Model.Products)
+                    {
+                        <option value="@ItemType.Id">@ItemType.Name</option>
+                    }
+                </select>
+            </td>
+            <td> <input type="text" name="Quantity" placeholder="Quantity" /> </td>
+            <td>
+                <label for="Quality">Choose a Quality:</label>
+                <select name="Quality" id="Quality">
+                    <option value="Excellent">Excellent</option>
+                    <option value="Good">Good</option>
+                    <option value="Poor">Poor</option>
+                    <option value="Bad">Bad</option>
+                </select>
+            </td>
+            <td> <input type="text" name="Price" placeholder="Price" /> </td>
+            <td> <input type="submit" name="submit" value="Add" /> </td>
+
+        </tr>
+    </table>
+</form>

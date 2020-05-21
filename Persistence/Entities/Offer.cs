@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ItemStoreProject.Validation;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -15,12 +16,16 @@ namespace ItemStoreProject.Persistence.Entities
         [ForeignKey("Product")] public string ProductId { get; set; }
 
         [ForeignKey("Owner")] public string OwnerId { get; set; }
-
-        public uint Quantity { get; set; }
+        [Required(ErrorMessage ="Quantity must be positive number")]
+        [Range(1, int.MaxValue, ErrorMessage = "Only positive number allowed")]
+        public uint ?Quantity { get; set; }
+        [Required]
+        [Quality(ErrorMessage ="Only Excelent, Good, Poor, Bad qualities are accepted")]
         public string Quality { get; set; }
-        public decimal Price { get; set; }
+        [Required(ErrorMessage = "Price must be positive number")]
+        [Range(1, int.MaxValue, ErrorMessage = "Only positive number allowed")]
+        public decimal ?Price { get; set; }
 
-        //VALIDTATION
         public Product Product { get; set; }
         public User Owner { get; set; }
     }

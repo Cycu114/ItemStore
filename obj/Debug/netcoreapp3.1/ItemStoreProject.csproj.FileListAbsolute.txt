@@ -446,7 +446,10 @@ C:\Users\ASUS\Desktop\ItemStoreProject\ItemStoreProject\bin\Debug\netcoreapp3.1\
 C:\Users\ASUS\Desktop\ItemStoreProject\ItemStoreProject\bin\Debug\netcoreapp3.1\Microsoft.SqlServer.Smo.dll
 C:\Users\ASUS\Desktop\ItemStoreProject\ItemStoreProject\bin\Debug\netcoreapp3.1\Microsoft.SqlServer.SmoExtended.dll
 C:\Users\ASUS\Desktop\ItemStoreProject\ItemStoreProject\bin\Debug\netcoreapp3.1\Microsoft.SqlServer.SqlEnum.dll
+C:\Users\ASUS\Desktop\ItemStoreProject\ItemStoreProject\obj\Debug\netcoreapp3.1\Razor\Views\Items\Category.cshtml.g.cs
+C:\Users\ASUS\Desktop\ItemStoreProject\ItemStoreProject\obj\Debug\netcoreapp3.1\Razor\Views\Items\Offers.cshtml.g.cs
+C:\Users\ASUS\Desktop\ItemStoreProject\ItemStoreProject\obj\Debug\netcoreapp3.1\Razor\Views\Items\Products.cshtml.g.cs
+C:\Users\ASUS\Desktop\ItemStoreProject\ItemStoreProject\bin\Debug\netcoreapp3.1\Elmah.dll
 C:\Users\ASUS\Desktop\ItemStoreProject\ItemStoreProject\obj\Debug\netcoreapp3.1\ItemStoreProject.csproj.CoreCompileInputs.cache
 C:\Users\ASUS\Desktop\ItemStoreProject\ItemStoreProject\obj\Debug\netcoreapp3.1\ItemStoreProject.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\ASUS\Desktop\ItemStoreProject\ItemStoreProject\obj\Debug\netcoreapp3.1\ItemStoreProject.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\ASUS\Desktop\ItemStoreProject\ItemStoreProject\obj\Debug\netcoreapp3.1\Razor\Views\Account\Category.cshtml.g.cs

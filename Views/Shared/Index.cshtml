@@ -6,15 +6,17 @@
 <div class="text-center" xmlns="http://www.w3.org/1999/html">
 
     <h1>@Model?.Title</h1>
-    <br/>
+    <br />
+    <h1>@Html?.ValidationSummary()</h1>
+    <br />
     <h1>Hello @Model?.UserLogin!</h1>
-    <br/>
+    <br />
     <h1>Bye @Model?.Password</h1>
-    <br/>
+    <br />
     @Model?.whatever
     @*@Json.Serialize(Model?.whatever)*@
 
-    <br/>
+    <br />
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>

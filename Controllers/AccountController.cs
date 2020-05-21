@@ -8,6 +8,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace ItemStoreProject.Controllers
@@ -27,46 +28,6 @@ namespace ItemStoreProject.Controllers
             this._signInManager = signInManager;
             _dbContext = dbContext;
             _logger = logger;
-        }
-
-        [Authorize(Roles = "Admin")]
-        [HttpGet("category")]
-        public IActionResult Category()
-        {
-            List<Category> Items = new List<Category>();
-            Items = _dbContext.Categories.OrderBy(o => o.name).ToList();
-            var model = new CategoryViewModel();
-            model.Categories = Items;
-            return View(model);
-        }
-
-        [Authorize(Roles = "Admin")]
-        [HttpPost("updateCategoryName")]
-        public IActionResult updateCategoryName(Category model)
-        {
-            model.name = model.name.Trim();
-            _dbContext.Categories.Update(model);
-            _dbContext.SaveChanges();
-            return Redirect("/account/category");
-        }
-
-        [Authorize(Roles = "Admin")]
-        [HttpPost("addCategoryName")]
-        public IActionResult addCategoryName(Category model)
-        {
-            _dbContext.Categories.Add(model);
-            _dbContext.SaveChanges();
-            return Redirect("/account/category");
-        }
-
-        [Authorize(Roles = "Admin")]
-        [HttpPost("removeCategoryName")]
-        public IActionResult removeCategoryName(Category model)
-        {
-            _dbContext.Categories.Remove(model);
-            _dbContext.SaveChanges();
-            return Redirect("/account/category");
-
         }
 
         [HttpGet("register")]

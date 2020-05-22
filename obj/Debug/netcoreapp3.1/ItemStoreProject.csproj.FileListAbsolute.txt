@@ -452,6 +452,8 @@ C:\Users\ASUS\Desktop\ItemStoreProject\ItemStoreProject\obj\Debug\netcoreapp3.1\
 C:\Users\ASUS\Desktop\ItemStoreProject\ItemStoreProject\bin\Debug\netcoreapp3.1\Elmah.dll
 C:\Users\ASUS\Desktop\ItemStoreProject\ItemStoreProject\bin\Debug\netcoreapp3.1\Microsoft.Owin.dll
 C:\Users\ASUS\Desktop\ItemStoreProject\ItemStoreProject\bin\Debug\netcoreapp3.1\Owin.dll
+C:\Users\ASUS\Desktop\ItemStoreProject\ItemStoreProject\bin\Debug\netcoreapp3.1\Dropbox.Api.dll
+C:\Users\ASUS\Desktop\ItemStoreProject\ItemStoreProject\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.Google.dll
 C:\Users\ASUS\Desktop\ItemStoreProject\ItemStoreProject\obj\Debug\netcoreapp3.1\ItemStoreProject.csproj.CoreCompileInputs.cache
 C:\Users\ASUS\Desktop\ItemStoreProject\ItemStoreProject\obj\Debug\netcoreapp3.1\ItemStoreProject.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\ASUS\Desktop\ItemStoreProject\ItemStoreProject\obj\Debug\netcoreapp3.1\ItemStoreProject.MvcApplicationPartsAssemblyInfo.cache

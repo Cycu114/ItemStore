@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "LtWN1kCziazEl+jq4qu448yXAy/rwO9o08D6v2kQjpsLMb60DeKTaTkM980gbqd6+2NFf0PijoUpoLLuMtWsCQ==",
+  "dgSpecHash": "6qrQg/aszcnPQqpS5m1jwHkbkHURnWy0e6mjkVDcSh4JeVeTxqCwZaP2kVuLLimPTLzBy4GBinLPEQOd1YG+nw==",
   "success": true,
   "projectFilePath": "C:\\Users\\ASUS\\Desktop\\ItemStoreProject\\ItemStoreProject\\ItemStoreProject.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\ASUS\\.nuget\\packages\\dropbox.api\\4.10.0\\dropbox.api.4.10.0.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\elmah\\1.2.2\\elmah.1.2.2.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\elmah.corelibrary\\1.2.2\\elmah.corelibrary.1.2.2.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.aspnetcore.authentication.google\\3.1.4\\microsoft.aspnetcore.authentication.google.3.1.4.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.0-preview.3.20215.14\\microsoft.aspnetcore.cryptography.internal.5.0.0-preview.3.20215.14.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\5.0.0-preview.3.20215.14\\microsoft.aspnetcore.cryptography.keyderivation.5.0.0-preview.3.20215.14.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",

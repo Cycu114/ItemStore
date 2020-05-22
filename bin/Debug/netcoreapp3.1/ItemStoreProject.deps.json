@@ -24,6 +24,8 @@
     ".NETCoreApp,Version=v3.1": {
       "ItemStoreProject/1.0.0": {
         "dependencies": {
+          "Dropbox.Api": "4.10.0",
+          "Microsoft.AspNetCore.Authentication.Google": "3.1.4",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.0-preview.3.20215.14",
           "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": "3.1.3",
           "Microsoft.EntityFrameworkCore": "5.0.0-preview.3.20181.2",
@@ -305,6 +307,20 @@
           "ItemStoreProject.dll": {}
         }
       },
+      "Dropbox.Api/4.10.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Dropbox.Api.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.7425.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Dropbox.Api.dll": {}
+        }
+      },
       "elmah/1.2.2": {
         "dependencies": {
           "elmah.corelibrary": "1.2.2"
@@ -319,6 +335,17 @@
         },
         "compile": {
           "lib/Elmah.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Authentication.Google/3.1.4": {
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.Google.dll": {
+            "assemblyVersion": "3.1.4.0",
+            "fileVersion": "3.100.420.21604"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.Google.dll": {}
         }
       },
       "Microsoft.AspNetCore.Cryptography.Internal/5.0.0-preview.3.20215.14": {
@@ -4090,6 +4117,13 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Dropbox.Api/4.10.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-r+yQu45FnhuTGHld7DLyFE2TB2zQkh7b4EDZ9QltxPsaBdEooUvPI/1jTCytg3O075okJKyxq3jWckycZXGEbg==",
+      "path": "dropbox.api/4.10.0",
+      "hashPath": "dropbox.api.4.10.0.nupkg.sha512"
+    },
     "elmah/1.2.2": {
       "type": "package",
       "serviceable": true,
@@ -4103,6 +4137,13 @@
       "sha512": "sha512-OEx4ds9r2bw2/45VZwfw11lLv4y+mC2FUZxp7LsjmauFxj92K1kx8hafSBvls+V9s0WH0wv84B1LfWN/EaGfkg==",
       "path": "elmah.corelibrary/1.2.2",
       "hashPath": "elmah.corelibrary.1.2.2.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Authentication.Google/3.1.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-YaSqdLcLxb7+f/5LY/r8FJCyzmGx3AmGeT3zo9/TOEp4nn3xSNoIMy2Du4dmBhmr/pM6QZOoIxVwXDOxGN2lhg==",
+      "path": "microsoft.aspnetcore.authentication.google/3.1.4",
+      "hashPath": "microsoft.aspnetcore.authentication.google.3.1.4.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Cryptography.Internal/5.0.0-preview.3.20215.14": {
       "type": "package",

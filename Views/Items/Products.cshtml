@@ -13,7 +13,8 @@
 }
 <h1>Item Types</h1>
 <hr />
-<form method="POST" action="/items/AddProduct">
+<form method="POST" action="/items/AddProduct" enctype="multipart/form-data">
+    @Html.AntiForgeryToken()
     <table cellspacing="10">
         <tr>
             <th>
@@ -39,14 +40,14 @@
                         var CategoryName = "None";
                         foreach (var CategoryFind in Model.Categories)
                         {
-                            if (CategoryFind.Id == ItemType.Id) CategoryName = CategoryFind.Name;
+                            if (CategoryFind.Id == ItemType.CategoryId) CategoryName = CategoryFind.Name;
                         }
                     }
                     @CategoryName
                 </td>
 
                 <td> @ItemType.Name  </td>
-                <td> @ItemType.ImgUrl  </td>
+                <td> <img style=" height: 100px;" src='@Url.Content(Url.Content(ItemType.ImgUrl))' /> </td>
             </tr>
             index++;
 
@@ -57,14 +58,14 @@
             <td>
                 <label for="Category" style="margin:10px">Choose a category:</label>
                 <select name="CategoryId" id="Category">
-                    @foreach (var Category in Model.Categories)
+                    @foreach (var Category  in Model.Categories)
                     {
                         <option value="@Category.Id">@Category.Name</option>
                     }
                 </select>
             </td>
             <td> <input type="text" name="Name" placeholder="ItemType Name" /> </td>
-            <td> <input type="text" name="ImgUrl" placeholder="Image Link" /> </td>
+            <td> <input type="file" name="FormFile" placeholder="Image Link" /> </td>
 
             <td> <input type="submit" name="submit" value="Add" /> </td>
         </tr>

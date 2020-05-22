@@ -77,6 +77,15 @@ namespace ItemStoreProject
                 options.AccessDeniedPath = "/account/accessDenied";
                 options.SlidingExpiration = true;
             });
+            services.AddAuthentication()
+        .AddGoogle(options =>
+        {
+            IConfigurationSection googleAuthNSection =
+                Configuration.GetSection("Authentication:Google");
+
+            options.ClientId = googleAuthNSection["ClientId"];
+            options.ClientSecret = googleAuthNSection["ClientSecret"];
+        });
         }
 
 

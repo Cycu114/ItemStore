@@ -10,6 +10,11 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System.Web;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Dropbox.Api;
+using Dropbox.Api.Files;
 
 namespace ItemStoreProject.Controllers
 {
@@ -28,7 +33,8 @@ namespace ItemStoreProject.Controllers
             _dbContext = dbContext;
             _logger = logger;
         }
-
+        static string ApplicationName = "PawelZieba";
+        
         [Authorize]
         [HttpPost("addItemOffers")]
         public IActionResult addItemOffers(Offer model)
@@ -100,23 +106,50 @@ namespace ItemStoreProject.Controllers
 
         }
 
+        [ValidateAntiForgeryToken]
         [Authorize]
         [HttpPost("addProduct")]
-        public IActionResult AddProduct(Product model)
+        public async Task<IActionResult> addItemType(Product model)
         {
-            if (ModelState.IsValid)
-            {
-                _dbContext.Products.Add(model);
-                _dbContext.SaveChanges();
-                return Redirect("products");
-            }
-            else
+            if (!ModelState.IsValid)
             {
                 var errorList = string.Join(" | ", ModelState.Values
                      .SelectMany(v => v.Errors)
                      .Select(e => e.ErrorMessage));
-                return Redirect("products/" + errorList);
+                return Redirect("/items/products/" + errorList);
             }
+            if (model.FormFile == null)
+            {
+                return Redirect("/items/products/Image can't be null");
+            }
+
+            var accessToken = "JBgTBY18xTAAAAAAAAAAN1NC1MdRbWdImWugY0t15NFOSD-kZ0DOpiLNDbJr3-lF";
+            var ApplicationName = "WebsiteImageUploadserver";
+            using (DropboxClient client = new DropboxClient(accessToken, new DropboxClientConfig(ApplicationName)))
+            {
+
+                string[] spitInputFileName = model.FormFile.FileName.Split(new string[] { "\\" }, StringSplitOptions.RemoveEmptyEntries);
+                string fileNameAndExtension = spitInputFileName[spitInputFileName.Length - 1];
+
+                string[] fileNameAndExtensionSplit = fileNameAndExtension.Split('.');
+                string originalFileName = fileNameAndExtensionSplit[0];
+                string originalExtension = fileNameAndExtensionSplit[1];
+
+                string fileName = @"/Images/" + originalFileName + Guid.NewGuid().ToString().Replace("-", "") + "." + originalExtension;
+
+                var updated = client.Files.UploadAsync(
+                    fileName,
+                    mode: WriteMode.Overwrite.Overwrite.Instance,
+                    body: model.FormFile.OpenReadStream()).Result;
+
+                var result = client.Sharing.CreateSharedLinkWithSettingsAsync(fileName).Result;
+                model.ImgUrl = result.Url.Replace("?dl=0", "?raw=1");
+            }
+
+
+            _dbContext.Products.Add(model);
+            _dbContext.SaveChanges();
+            return Redirect("/items/products");
         }
 
         [Authorize(Roles = "Admin")]

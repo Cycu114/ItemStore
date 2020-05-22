@@ -11,7 +11,6 @@
 using System;
 using System.Reflection;
 
-[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("1f8def23-8dea-4a6a-8f63-bfb11e451add")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("ItemStoreProject")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]

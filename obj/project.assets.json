@@ -2,6 +2,18 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
+      "Dropbox.Api/4.10.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "10.0.3"
+        },
+        "compile": {
+          "lib/netstandard2.0/Dropbox.Api.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Dropbox.Api.dll": {}
+        }
+      },
       "elmah/1.2.2": {
         "type": "package",
         "dependencies": {
@@ -16,6 +28,18 @@
         "runtime": {
           "lib/Elmah.dll": {}
         }
+      },
+      "Microsoft.AspNetCore.Authentication.Google/3.1.4": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.Google.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.Google.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       },
       "Microsoft.AspNetCore.Cryptography.Internal/5.0.0-preview.3.20215.14": {
         "type": "package",
@@ -2774,6 +2798,24 @@
     }
   },
   "libraries": {
+    "Dropbox.Api/4.10.0": {
+      "sha512": "r+yQu45FnhuTGHld7DLyFE2TB2zQkh7b4EDZ9QltxPsaBdEooUvPI/1jTCytg3O075okJKyxq3jWckycZXGEbg==",
+      "type": "package",
+      "path": "dropbox.api/4.10.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "dropbox.api.4.10.0.nupkg.sha512",
+        "dropbox.api.nuspec",
+        "lib/net45/Dropbox.Api.dll",
+        "lib/net45/Dropbox.Api.xml",
+        "lib/netstandard2.0/Dropbox.Api.dll",
+        "lib/portable-net40+sl5+wp80+win8+wpa81/Dropbox.Api.dll",
+        "lib/portable-net40+sl5+wp80+win8+wpa81/Dropbox.Api.xml",
+        "lib/portable-net45+win8+wpa81/Dropbox.Api.dll",
+        "lib/portable-net45+win8+wpa81/Dropbox.Api.xml"
+      ]
+    },
     "elmah/1.2.2": {
       "sha512": "UGnc/NHz0SHNc5eWaW+NynuYWFn+KM2NEoBJbavDt6s8pSBZQgDkKaaqvEV43TiF5GB1uDVjXLx1yjdfP78UPQ==",
       "type": "package",
@@ -2798,6 +2840,21 @@
         "elmah.corelibrary.1.2.2.nupkg.sha512",
         "elmah.corelibrary.nuspec",
         "lib/Elmah.dll"
+      ]
+    },
+    "Microsoft.AspNetCore.Authentication.Google/3.1.4": {
+      "sha512": "YaSqdLcLxb7+f/5LY/r8FJCyzmGx3AmGeT3zo9/TOEp4nn3xSNoIMy2Du4dmBhmr/pM6QZOoIxVwXDOxGN2lhg==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.authentication.google/3.1.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.Google.dll",
+        "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.Google.xml",
+        "microsoft.aspnetcore.authentication.google.3.1.4.nupkg.sha512",
+        "microsoft.aspnetcore.authentication.google.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Cryptography.Internal/5.0.0-preview.3.20215.14": {
@@ -8890,6 +8947,8 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "Dropbox.Api >= 4.10.0",
+      "Microsoft.AspNetCore.Authentication.Google >= 3.1.4",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 5.0.0-preview.3.20215.14",
       "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation >= 3.1.3",
       "Microsoft.EntityFrameworkCore >= 5.0.0-preview.3.20181.2",
@@ -8942,6 +9001,14 @@
     "frameworks": {
       "netcoreapp3.1": {
         "dependencies": {
+          "Dropbox.Api": {
+            "target": "Package",
+            "version": "[4.10.0, )"
+          },
+          "Microsoft.AspNetCore.Authentication.Google": {
+            "target": "Package",
+            "version": "[3.1.4, )"
+          },
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
             "target": "Package",
             "version": "[5.0.0-preview.3.20215.14, )"

@@ -14,6 +14,7 @@ using System.Reflection;
 
 namespace ItemStoreProject.Controllers
 {
+    
     [Route("")]
     public class HomeController : Controller
     {

@@ -61,6 +61,10 @@
               "target": "Package",
               "version": "[5.0.0-preview.3.20181.2, )"
             },
+            "Microsoft.Owin": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
             "Microsoft.SqlServer.SqlManagementObjects": {
               "target": "Package",
               "version": "[160.2004021.0, )"

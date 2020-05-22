@@ -1,6 +1,7 @@
 ﻿using ItemStoreProject.Models;
 using ItemStoreProject.Persistence;
 using ItemStoreProject.Persistence.Entities;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -83,6 +84,7 @@ namespace ItemStoreProject.Controllers
         {
             return View(new LoginViewModel());
         }
+       
 
         [HttpPost("login")]
         [ValidateAntiForgeryToken]

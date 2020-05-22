@@ -14,6 +14,14 @@ using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.AspNetCore.Identity;
 using ItemStoreProject.Persistence.Entities;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authentication;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication.OAuth;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using Newtonsoft.Json.Linq;
+using System.Text.Json;
 
 namespace ItemStoreProject
 {
@@ -57,17 +65,18 @@ namespace ItemStoreProject
             //    options.User.RequireUniqueEmail = false;
             //});
 
-         
+
             services.AddIdentity<User, IdentityRole>(options =>
             {
                 options.Password.RequiredLength = 6;
                 options.Password.RequireNonAlphanumeric = false;
                 options.Password.RequireUppercase = false;
-                
+
             }).AddEntityFrameworkStores<AppDbContext>();
 
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
+           
             services.ConfigureApplicationCookie(options =>
             {
                 // Cookie settings
@@ -77,20 +86,11 @@ namespace ItemStoreProject
                 options.AccessDeniedPath = "/account/accessDenied";
                 options.SlidingExpiration = true;
             });
-            services.AddAuthentication()
-        .AddGoogle(options =>
-        {
-            IConfigurationSection googleAuthNSection =
-                Configuration.GetSection("Authentication:Google");
 
-            options.ClientId = googleAuthNSection["ClientId"];
-            options.ClientSecret = googleAuthNSection["ClientSecret"];
-        });
         }
 
-
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+            // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -98,7 +98,7 @@ namespace ItemStoreProject
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/Error/DefaultErrorPage");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
@@ -113,6 +113,12 @@ namespace ItemStoreProject
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+            app.Run(context =>
+            {
+              context.Response.StatusCode = 404;
+              return Task.FromResult(0);
+            });
         }
+
     }
 }

@@ -123,7 +123,7 @@ namespace ItemStoreProject.Controllers
                 return Redirect("/items/products/Image can't be null");
             }
 
-            var accessToken = "JBgTBY18xTAAAAAAAAAAN1NC1MdRbWdImWugY0t15NFOSD-kZ0DOpiLNDbJr3-lF";
+            var accessToken = "JBgTBY18xTAAAAAAAAAAPPqqg6kM2a67tBBEBv7SIxNVOH8akKOjyEiivxmf9hAF";
             var ApplicationName = "WebsiteImageUploadserver";
             using (DropboxClient client = new DropboxClient(accessToken, new DropboxClientConfig(ApplicationName)))
             {

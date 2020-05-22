@@ -14,7 +14,7 @@ using System.Reflection;
 
 namespace ItemStoreProject.Controllers
 {
-    
+        
     [Route("")]
     public class HomeController : Controller
     {
@@ -32,6 +32,12 @@ namespace ItemStoreProject.Controllers
             _dbContext = dbContext;
             _logger = logger;
             _roleManager = roleManager;
+        }
+        [Route("{*url}", Order = 999)]
+        public IActionResult CatchAll()
+        {
+            Response.StatusCode = 404;
+            return View("PageNotFound");
         }
 
         [HttpGet]

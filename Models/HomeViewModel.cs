@@ -6,5 +6,6 @@
         public string UserLogin { get; set; }
         public string Password { get; set; }
         public dynamic whatever  { get; set; }
+
     }
 }
